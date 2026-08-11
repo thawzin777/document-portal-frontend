@@ -39,6 +39,9 @@ export default function Login() {
                 : undefined;
             console.log(message)
             setError(message)
+            setTimeout(() => {
+                setError("");
+            }, 3000);
         } finally {
             setLoading(false);
         }

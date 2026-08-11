@@ -51,6 +51,7 @@ export default function DashboardPage({
     pagination,
     handlePageChange,
 }: DashboardPageProps) {
+    //console.log(documents)
     return (
         <SidebarProvider
             style={

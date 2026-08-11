@@ -112,8 +112,7 @@ export function LoginForm({
                     <InfoIcon />
                     <AlertTitle>{error}</AlertTitle>
                     <AlertDescription className="text-white">
-                      We&apos;ve added dark mode support. You can enable it in your account
-                      settings.
+                       Login Failed
                     </AlertDescription>
                   </Alert>
                 )}

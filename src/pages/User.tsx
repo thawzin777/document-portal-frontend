@@ -107,21 +107,6 @@ export default function Users() {
 
                     </div>
 
-                    {/* {loading && (
-                        <p className="text-sm text-muted-foreground">Loading users...</p>
-                    )}
-
-                    {!loading && error && (
-                        <p className="text-sm text-destructive" role="alert">{error}</p>
-                    )}
-
-                    {!loading && !error && users.length === 0 && (
-                        <Card>
-                            <CardContent className="py-10 text-center text-muted-foreground">
-                                No users found.
-                            </CardContent>
-                        </Card>
-                    )} */}
                     <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_20rem]">
                         <section aria-labelledby="users-heading">
                             {loading ? (
@@ -212,7 +197,7 @@ export default function Users() {
 
                         <aside>
                             <CreateUserForm
-                                // onUserCreated={loadUsers}
+                                onUpload={loadUsers}
                                 setToastMessage={setToastMessage}
                                 setToastType={setToastType}
                                 setShowToast={setShowToast}

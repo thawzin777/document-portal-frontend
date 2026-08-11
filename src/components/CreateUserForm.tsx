@@ -11,7 +11,7 @@ import { Label } from "./ui/label";
 
 
 interface CreateUserFormProps {
-    onUserCreated?: () => void;
+    onUpload?: () => void;
     setToastMessage?: (message: string) => void;
     setToastType?: (type: 'success' | 'error') => void;
     setShowToast?: (show: boolean) => void;
@@ -19,7 +19,7 @@ interface CreateUserFormProps {
     toastMessage?: string;
     toastType?: string;
 }
-export default function CreateUserForm({ onUserCreated, setToastMessage, setToastType, setShowToast}: CreateUserFormProps) {
+export default function CreateUserForm({ onUpload, setToastMessage, setToastType, setShowToast}: CreateUserFormProps) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -52,7 +52,7 @@ export default function CreateUserForm({ onUserCreated, setToastMessage, setToas
             setToastMessage && setToastMessage("User created successfully.");
             setToastType && setToastType('success');
             setShowToast && setShowToast(true);
-            onUserCreated && onUserCreated();
+           await onUpload?.();
         } catch (requestError: unknown) {
             const message = axios.isAxiosError(requestError)
                 ? requestError.response?.data?.message
@@ -65,10 +65,10 @@ export default function CreateUserForm({ onUserCreated, setToastMessage, setToas
         }
     };
   useEffect(() => {
-    if (onUserCreated) {
-      onUserCreated();
+    if (onUpload) {
+      onUpload();
     }
-  }, [onUserCreated]);
+  }, [onUpload]);
     
     return (
        <div className="">
