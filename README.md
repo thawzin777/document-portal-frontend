@@ -1,4 +1,57 @@
 # React + TypeScript + Vite
+Frontend Setup
+--------------
+cd document-portal-frontend
+
+Install dependencies:
+
+npm install
+
+Create .env:
+
+VITE_API_URL=http://127.0.0.1:8000/api
+
+npm run dev
+
+Testing Checklist
+-----------------
+Admin can login
+
+Member can login
+
+Invalid login returns an error
+
+Unauthenticated document request returns 401
+
+Authenticated users can view all documents
+
+Authenticated users can upload documents
+
+Users can delete their own documents
+
+Users cannot delete other users' documents
+
+Admin can create users
+
+Member cannot create users
+
+Logout removes authentication state
+
+JWT is attached to protected API requests
+
+Error Responses
+----------------
+Unauthenticated requests:
+
+401 Unauthorized
+
+Admin-only endpoints accessed by a member:
+
+403 Forbidden
+
+Attempting to delete another user's document:
+
+403 Forbidden
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
