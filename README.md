@@ -11,7 +11,9 @@ Create .env:
 
 VITE_API_URL=http://127.0.0.1:8000/api
 
-npm run devThen open:
+npm run dev
+
+Then open:
 
 http://localhost:5173
 
